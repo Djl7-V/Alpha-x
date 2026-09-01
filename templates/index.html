@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- NAVBAR -->
+<nav class="fixed top-4 left-4 right-4 z-50 glass px-4 sm:px-6 py-3 flex items-center justify-between rounded-2xl">
+    <a href="/" class="font-heading font-bold text-xl text-primary tracking-tight cursor-pointer flex items-center gap-2">
+        <svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4L10 14L4 28L12 22L16 30L20 22L28 28L22 14L26 4L18 12L16 6L14 12L6 4Z" fill="currentColor" opacity="0.9"/>
+            <circle cx="12" cy="16" r="1.5" fill="#020617"/>
+            <circle cx="20" cy="16" r="1.5" fill="#020617"/>
+            <path d="M14 20L16 22L18 20" stroke="#020617" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Alpha-X
+    </a>
+    <div class="flex items-center gap-4">
+        <a href="https://github.com" target="_blank" rel="noopener" class="text-muted hover:text-ink transition-colors duration-200 cursor-pointer" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 pb-16">
+    <div class="text-center mb-10 animate-fade-in">
+        <svg class="w-20 h-20 mx-auto mb-4 text-primary" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4L10 14L4 28L12 22L16 30L20 22L28 28L22 14L26 4L18 12L16 6L14 12L6 4Z" fill="currentColor" opacity="0.9"/>
+            <circle cx="12" cy="16" r="1.5" fill="#020617"/>
+            <circle cx="20" cy="16" r="1.5" fill="#020617"/>
+            <path d="M14 20L16 22L18 20" stroke="#020617" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight">
+            <span class="text-ink">Alpha-</span><span class="text-primary">X</span>
+        </h1>
+        <p class="mt-3 text-lg sm:text-xl text-muted font-light max-w-lg mx-auto leading-relaxed">
+            Téléchargez des vidéos et audio depuis <span class="font-medium text-ink">YouTube</span>, <span class="font-medium text-ink">TikTok</span>, <span class="font-medium text-ink">Instagram</span>, <span class="font-medium text-ink">X</span> et 100+ plateformes. Gratuit, rapide, open source.
+        </p>
+    </div>
+
+    <!-- Download Card -->
+    <div class="w-full max-w-lg animate-fade-in delay-100">
+        <div class="glass-strong p-5 sm:p-8 rounded-3xl animate-glow">
+
+            <!-- URL Input -->
+            <label for="url-input" class="block text-sm font-medium text-muted mb-1.5">Lien vidéo / audio</label>
+            <div class="relative">
+                <input
+                    id="url-input"
+                    type="url"
+                    placeholder="https://www.youtube.com/watch?v=..., tiktok.com/..., instagram.com/..."
+                    class="w-full h-11 glass rounded-xl px-4 pr-11 text-ink focus:border-primary transition-colors duration-200 cursor-text"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+                <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted/40 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+            </div>
+
+            <!-- Format -->
+            <div class="mt-5">
+                <span class="block text-sm font-medium text-muted mb-2">Format</span>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="cursor-pointer">
+                        <input type="radio" name="format" value="mp4" checked class="sr-only peer">
+                        <div class="glass rounded-xl px-4 py-3 text-center text-sm font-medium text-muted peer-checked:border-primary peer-checked:bg-primary/20 peer-checked:text-primary peer-hover:border-primary/30 transition-all duration-200">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                            Vidéo (MP4)
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="radio" name="format" value="mp3" class="sr-only peer">
+                        <div class="glass rounded-xl px-4 py-3 text-center text-sm font-medium text-muted peer-checked:border-primary peer-checked:bg-primary/20 peer-checked:text-primary peer-hover:border-primary/30 transition-all duration-200">
+                            <svg class="w-5 h-5 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+                            Audio (MP3)
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Quality -->
+            <div class="mt-4">
+                <span class="block text-sm font-medium text-muted mb-2">Qualité</span>
+                <div class="grid grid-cols-2 gap-3">
+                    <label class="cursor-pointer">
+                        <input type="radio" name="quality" value="best" checked class="sr-only peer">
+                        <div class="glass rounded-xl px-4 py-2.5 text-center text-sm font-medium text-muted peer-checked:border-primary peer-checked:bg-primary/20 peer-checked:text-primary peer-hover:border-primary/30 transition-all duration-200">
+                            Meilleure
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="radio" name="quality" value="worst" class="sr-only peer">
+                        <div class="glass rounded-xl px-4 py-2.5 text-center text-sm font-medium text-muted peer-checked:border-primary peer-checked:bg-primary/20 peer-checked:text-primary peer-hover:border-primary/30 transition-all duration-200">
+                            Économiser
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button
+                id="btn-download"
+                onclick="startDownload()"
+                class="mt-6 w-full bg-cta/90 text-white font-heading font-semibold text-base h-12 px-6 cursor-pointer hover:bg-cta active:bg-cta/80 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
+            >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Télécharger
+            </button>
+
+            <!-- Progress -->
+            <div id="progress-section" class="mt-5 hidden">
+                <div class="w-full glass rounded-full h-2 overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                </div>
+                <p id="progress-label" class="mt-2 text-sm text-muted text-center font-mono">0%</p>
+            </div>
+
+            <!-- Done -->
+            <div id="done-section" class="mt-5 hidden animate-fade-in">
+                <div class="glass rounded-xl border-cta/30 p-4 text-center" style="border: 1px solid rgba(16,185,129,0.3)">
+                    <svg class="w-8 h-8 mx-auto mb-2 text-cta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <p id="done-title" class="text-sm text-muted mb-3 truncate max-w-xs mx-auto"></p>
+                    <a
+                        id="btn-download-file"
+                        href="#"
+                        class="inline-flex items-center gap-2 bg-cta/90 text-white font-medium px-6 py-2.5 rounded-xl cursor-pointer hover:bg-cta transition-colors duration-200"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        Sauvegarder
+                    </a>
+                </div>
+            </div>
+
+            <!-- Error -->
+            <div id="error-section" class="mt-5 hidden">
+                <div class="glass rounded-xl p-4 text-center" style="border: 1px solid rgba(239,68,68,0.3)">
+                    <svg class="w-6 h-6 mx-auto mb-1 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    <p id="error-msg" class="text-sm text-red-300/80"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="mt-16 w-full max-w-3xl px-4 sm:px-6 animate-fade-in delay-200">
+        <h2 class="font-heading text-center text-sm font-semibold text-muted/50 uppercase tracking-widest mb-8">Comment ça marche</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="w-10 h-10 mx-auto mb-3 glass rounded-xl flex items-center justify-center" style="border: 1px solid rgba(6,182,212,0.3)">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </div>
+                <p class="text-sm font-medium text-ink/80">1. Collez le lien</p>
+                <p class="text-xs text-muted/50 mt-1">Copiez l'URL de votre vidéo, peu importe la plateforme</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="w-10 h-10 mx-auto mb-3 glass rounded-xl flex items-center justify-center" style="border: 1px solid rgba(6,182,212,0.3)">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                </div>
+                <p class="text-sm font-medium text-ink/80">2. Choisissez le format</p>
+                <p class="text-xs text-muted/50 mt-1">MP4 pour la vidéo, MP3 pour l'audio</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <div class="w-10 h-10 mx-auto mb-3 glass rounded-xl flex items-center justify-center" style="border: 1px solid rgba(6,182,212,0.3)">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                </div>
+                <p class="text-sm font-medium text-ink/80">3. Téléchargez</p>
+                <p class="text-xs text-muted/50 mt-1">Sauvegardez le fichier sur votre appareil</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mt-12 w-full max-w-3xl px-4 sm:px-6 animate-fade-in delay-300">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="glass rounded-2xl p-5 text-center">
+                <svg class="w-6 h-6 mx-auto mb-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                <h3 class="font-heading font-semibold text-sm text-ink mb-1">Rapide</h3>
+                <p class="text-xs text-muted/50">Progression en temps réel</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <svg class="w-6 h-6 mx-auto mb-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <h3 class="font-heading font-semibold text-sm text-ink mb-1">Gratuit</h3>
+                <p class="text-xs text-muted/50">Open source, sans limite</p>
+            </div>
+            <div class="glass rounded-2xl p-5 text-center">
+                <svg class="w-6 h-6 mx-auto mb-2 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <h3 class="font-heading font-semibold text-sm text-ink mb-1">Sécurisé</h3>
+                <p class="text-xs text-muted/50">Aucune donnée collectée</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-20 text-center text-xs text-muted/30 pb-8 px-4">
+        <p>Alpha-X — Téléchargeur vidéo & audio open source. Respectez les droits d'auteur.</p>
+    </footer>
+</section>
+{% endblock %}
