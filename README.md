@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="logo.svg" alt="Logo Alpha-X" width="64">
+</div>
+
 # Alpha-X — Téléchargeur Vidéo & Audio
 
 Outil en ligne de commande simples et gratuit pour télécharger des vidéos et audio en **MP4** (vidéo) ou **MP3** (audio) depuis YouTube, TikTok, Instagram, X, Facebook et 100+ plateformes.
